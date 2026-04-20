@@ -4,7 +4,7 @@ public class App {
     public static void main(String[] args) {
 
         System.out.println("==================================");
-        System.out.println(" MAVEN BUILD AUTOMATION PROJECT updated successfully");
+        System.out.println(" MAVEN BUILD AUTOMATION PROJECT updated successfully for the one of the yunus");
         System.out.println("==================================");
         System.out.println("Project Name : Maven Demo");
         System.out.println("Build Status : SUCCESS");
