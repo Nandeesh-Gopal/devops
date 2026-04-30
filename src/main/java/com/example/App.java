@@ -10,8 +10,6 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
-
-        // Serve HTML
         server.createContext("/", exchange -> {
             InputStream is = App.class.getClassLoader().getResourceAsStream("index.html");
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();
@@ -21,7 +19,6 @@ public class App {
             while ((nRead = is.read(data, 0, data.length)) != -1) {
                 buffer.write(data, 0, nRead);
             }
-
             byte[] response = buffer.toByteArray();
             exchange.sendResponseHeaders(200, response.length);
             OutputStream os = exchange.getResponseBody();
