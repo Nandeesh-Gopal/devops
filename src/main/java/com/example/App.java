@@ -4,7 +4,7 @@ public class App {
     public static void main(String[] args) {
 
         System.out.println("==================================");
-        System.out.println("devops project" );
+        System.out.println("devops project new file" );
         System.out.println("==================================");
         System.out.println("Project Name : Maven Demo");
         System.out.println("Build Status : SUCCESS");
