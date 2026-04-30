@@ -14,8 +14,15 @@ public class App {
         // Serve HTML
         server.createContext("/", exchange -> {
             InputStream is = App.class.getClassLoader().getResourceAsStream("index.html");
-            byte[] response = is.readAllBytes();
+ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+int nRead;
+byte[] data = new byte[1024];
 
+while ((nRead = is.read(data, 0, data.length)) != -1) {
+    buffer.write(data, 0, nRead);
+}
+
+byte[] response = buffer.toByteArray();
             exchange.sendResponseHeaders(200, response.length);
             OutputStream os = exchange.getResponseBody();
             os.write(response);
